@@ -1,0 +1,504 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <title>Fasa Workshop</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Conference project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+    <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+</head>
+<body>
+
+<div class="super_container">
+
+    <!-- Menu -->
+
+    <div class="menu trans_500">
+        <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+            <div class="menu_close_container">
+                <div class="menu_close"></div>
+            </div>
+            <div class="logo menu_logo">
+                <a href="#">
+                    <div class="logo_container d-flex flex-row align-items-start justify-content-start">
+                        <div class="logo_image">
+                            <div><img src="{% static 'images/logo.png' %}" alt=""></div>
+                        </div>
+                        <div class="logo_content">
+                            <div class="logo_text logo_text_not_ie">Fasa Workshop</div>
+                            <div class="logo_sub">Agosto 2019 - Faculdades Santo Agostinho - Montes Claros</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <ul>
+                <li class="menu_item"><a href="index.html">Home</a></li>
+                <li class="menu_item"><a href="#">Sobre</a></li>
+                <li class="menu_item"><a href="#">Palestrantes</a></li>
+                <li class="menu_item"><a href="#">Ingressos</a></li>
+                <li class="menu_item"><a href="news.html">Notícias</a></li>
+                <li class="menu_item"><a href="contact.html">Fale Conosco</a></li>
+            </ul>
+        </div>
+        <div class="menu_social">
+            <div class="menu_social_title">Siga-nos nas redes sociais</div>
+            <ul>
+                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Home -->
+
+    <div class="home">
+        <!-- <div class="home_background" style="background-image: url(images/index.jpg)"></div> -->
+        <div class="parallax_background parallax-window" data-parallax="scroll"
+             data-image-src="{% static 'images/index.jpg' %}" data-speed="0.8"></div>
+
+        <!-- Header -->
+
+        <header class="header" id="header">
+            <div>
+                <div class="header_top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="header_top_content d-flex flex-row align-items-center justify-content-start">
+                                    <div>
+                                        <a href="#">
+                                            <div class="logo_container d-flex flex-row align-items-start justify-content-start">
+                                                <div class="logo_image">
+                                                    <div><img src="{% static 'images/logo.png' %}" alt=""></div>
+                                                </div>
+                                                <div class="logo_content">
+                                                    <div id="logo_text" class="logo_text logo_text_not_ie">Fasa Workshop</div>
+                                                    <div class="logo_sub">2019 - Faculdades Santo Agostinho - Montes Claros</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="header_social ml-auto">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_nav" id="header_nav_pin">
+                    <div class="header_nav_inner">
+                        <div class="header_nav_container">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+                                            <nav class="main_nav">
+                                                <ul>
+                                                    <li class="active"><a href="/">Home</a></li>
+                                                    <li><a href="{% url 'about' %}">Sobre</a></li>
+                                                    <li><a href="{% url 'speaker' %}">Palestrantes</a></li>
+                                                    <li><a href="{% url 'events' %}">Eventos</a></li>
+                                                    <li><a href="{% url 'news' %}">Notícias</a></li>
+                                                    <li><a href="{% url 'contact' %}">Fale Conosco</a></li>
+                                                </ul>
+                                            </nav>
+                                            <div class="header_extra ml-auto">
+                                                <div class="header_search"><i class="fa fa-search"
+                                                                              aria-hidden="true"></i></div>
+                                                <div class="button header_button"><a href="#pricing">Faça Já Sua Inscrição!</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search_container">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="search_content d-flex flex-row align-items-center justify-content-end">
+                                            <form action="#" id="search_container_form" class="search_container_form">
+                                                <input type="text" class="search_container_input" placeholder="Search"
+                                                       required="required">
+                                                <button class="search_container_button"><i class="fa fa-search"
+                                                                                           aria-hidden="true"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="home_content_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="home_date">Agosto, 2019</div>
+                            <div class="home_title">2019 - Fasa Workshop</div>
+                            <div class="home_location">Montes Claros, MG</div>
+                            <div class="home_text">Workshop - Desenvolvimento Web com Django.
+                            </div>
+                            <div class="home_buttons">
+                                <div class="button home_button"><a href="#pricing">Faça Sua Inscrição Já!</a></div>
+                                <div class="button home_button"><a href="#">Saiba Mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro -->
+
+    <div class="intro">
+        <div class="intro_content d-flex flex-row flex-wrap align-items-start justify-content-between">
+
+            <!-- Intro Item -->
+            <div class="intro_item">
+                <div class="intro_image"><img src="{% static 'images/intro_1.jpg' %}" alt=""></div>
+                <div class="intro_body">
+                    <div class="intro_title"><a href="#programation">Programação</a></div>
+                    <div class="intro_subtitle">Donec quis metus ac arcu luctus accumsan.</div>
+                </div>
+            </div>
+
+            <!-- Intro Item -->
+            <div class="intro_item">
+                <div class="intro_image"><img src="{% static 'images/intro_2.jpg' %}" alt=""></div>
+                <div class="intro_body">
+                    <div class="intro_title"><a href="#">Notícias</a></div>
+                    <div class="intro_subtitle">Donec quis metus ac arcu luctus accumsan.</div>
+                </div>
+            </div>
+
+            <!-- Intro Item -->
+            <div class="intro_item">
+                <div class="intro_image"><img src="{% static 'images/intro_3.jpg' %}" alt=""></div>
+                <div class="intro_body">
+                    <div class="intro_title"><a href="#">Palestrantes</a></div>
+                    <div class="intro_subtitle">Donec quis metus ac arcu luctus accumsan.</div>
+                </div>
+            </div>
+
+            <!-- Intro Item -->
+            <div class="intro_item">
+                <div class="intro_image"><img src="{% static 'images/intro_4.jpg' %}" alt=""></div>
+                <div class="intro_body">
+                    <div class="intro_title"><a href="#">MiniCursos</a></div>
+                    <div class="intro_subtitle">Donec quis metus ac arcu luctus accumsan.</div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- Pricing -->
+
+    <div class="pricing">
+        <div class="parallax_background parallax-window" data-parallax="scroll"
+             data-image-src="{% static 'images/pricing.jpg' %}" data-speed="0.8"></div>
+        <div class="container" id="pricing">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="pricing_section_title">Escolha Seu Plano</div>
+                </div>
+            </div>
+            <div class="row pricing_row">
+
+                <!-- Pricing Item -->
+                <div class="col-lg-4 pricing_col">
+                    <div class="pricing_item">
+                        <div class="pricing_item_content">
+                            <div class="pricing_level">Aluno de outra instituição</div>
+                            <div class="pricing_price">$20<span>,00</span></div>
+                            <ul class="pricing_list">
+                                <li>2 Ingresso</li>
+                                <li>Palestras</li>
+                                <li>Breakfast</li>
+                            </ul>
+
+                            <div class="button pricing_button"><a href="/subscribe/">Inscreva-se</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Item -->
+                <div class="col-lg-4 pricing_col">
+                    <div class="pricing_item pricing_item_mid">
+                        <div class="pricing_item_content">
+                            <div class="pricing_level">Aluno Fasa</div>
+                            <div class="pricing_price">Grátis</div>
+                            <ul class="pricing_list">
+                                <li>2 Ingresso</li>
+                                <li>Breakfast</li>
+                                <li>Bebidas</li>
+                                <li>2 Minicursos</li>
+                                <li>Jantar VIP</li>
+                            </ul>
+
+                            <div class="button pricing_button"><a href="/subscription/">Inscreva-se</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Item -->
+                <div class="col-lg-4 pricing_col">
+                    <div class="pricing_item">
+                        <div class="pricing_item_content">
+                            <div class="pricing_level">Profissional</div>
+                            <div class="pricing_price">$59<span>,00</span></div>
+                            <ul class="pricing_list">
+                                <li>2 Ingressos</li>
+                                <li>Breakfast</li>
+                                <li>Bebidas</li>
+                                <li>2 Minicursos</li>
+                                <li>Jantar VIP</li>
+                            </ul>
+
+                            <div class="button pricing_button"><a href="/subscription/">Inscreva-se</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendar -->
+
+    <div id="programation" class="calendar">
+        <div class="container reset_container">
+            <div class="row">
+                <div class="col-xl-6 calendar_col">
+                    <div class="calendar_container">
+                        <div class="calendar_title_bar d-flex flex-row align-items-center justify-content-start">
+                            <div>
+                                <div class="calendar_icon"><img src="{% static 'images/calendar.svg' %}" alt=""></div>
+                            </div>
+                            <div class="calendar_title">12 Junho calendário dos eventos</div>
+                        </div>
+                        <div class="calendar_items">
+
+                            <!-- Calendar Item -->
+                            {% for talk in day_one %}
+                            <div class="calendar_item d-flex flex-row align-items-center justify-content-start">
+
+                                <div>
+                                    {% for speaker in talk.speakers.all %}
+                                    <div class="calendar_item_image"><img src="{{ speaker.photo }}"
+                                                                          alt="{{ speaker.name }}"></div>
+                                    {% endfor %}
+                                </div>
+
+                                <div class="calendar_item_time">
+                                    <div>{{ talk.start }}</div>
+                                    <div>{{ talk.local }}</div>
+                                </div>
+                                <div class="calendar_item_text">
+                                    <div>Tema: <a href="#"> {{ talk.title }} </a></div>
+                                    {% for speaker in talk.speakers.all %}
+                                    <div>Palestrante: {{ speaker.name }}</div>
+                                    {% endfor %}
+                                </div>
+
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-6 calendar_col">
+                    <div class="calendar_container">
+                        <div class="calendar_title_bar d-flex flex-row align-items-center justify-content-start">
+                            <div>
+                                <div class="calendar_icon"><img src="{% static 'images/calendar.svg' %}" alt=""></div>
+                            </div>
+                            <div class="calendar_title">13 Junho calendário dos eventos</div>
+                        </div>
+
+                        {% for talk in day_two %}
+                        <div class="calendar_items">
+
+                            <!-- Calendar Item -->
+                            <div class="calendar_item d-flex flex-row align-items-center justify-content-start">
+
+                                <div>
+                                    {% for speaker in talk.speakers.all %}
+                                    <div class="calendar_item_image"><img src="{{ speaker.photo }}"
+                                                                          alt="{{ speaker.name }}"></div>
+                                    {% endfor %}
+                                </div>
+                                <div class="calendar_item_time">
+                                    <div>{{ talk.start }}</div>
+                                    <div>{{ talk.local }}</div>
+                                </div>
+                                <div class="calendar_item_text">
+                                    <div>Tema: <a href="#">{{ talk.title }}</a></div>
+                                    {% for speaker in talk.speakers.all %}
+                                    <div>Palestrante: {{ speaker.name }} </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to action -->
+
+    <div class="cta">
+        <div class="parallax_background parallax-window" data-parallax="scroll"
+             data-image-src="{% static 'images/cta_1.jpg' %}" data-speed="0.8"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="cta_content text-center">
+                        <div class="cta_title">Inscreva-se Já!</div>
+                        <div class="button cta_button"><a href="#pricing">Faça Sua Incrição</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+        <div class="footer_content">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Footer Column -->
+                    <div class="col-lg-4 footer_col">
+                        <div class="footer_about">
+                            <div>
+                                <a href="#">
+                                    <div class="logo_container d-flex flex-row align-items-start justify-content-start">
+                                        <div class="logo_image">
+                                            <div><img src="{% static 'images/logo.png' %}" alt=""></div>
+                                        </div>
+                                        <div class="logo_content">
+                                            <div id="logo_text" class="logo_text logo_text_not_ie">Fasa Workshop</div>
+                                            <div class="logo_sub">2019 - Fasa Workshop - Montes Claros MG</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="footer_about_text">
+                                <p>Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt, sodales nunc id,
+                                    finibus nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                                    per inceptos himenaeos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Column -->
+                    <div class="col-lg-3 footer_col">
+                        <div class="footer_links">
+                            <ul>
+                                <li><a href="#">Hotéis</a></li>
+                                <li><a href="#">Patrocinadores</a></li>
+                                <li><a href="#">Notícias</a></li>
+                                <li><a href="#">Fale Conosco</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Footer Column -->
+                    <div class="col-lg-2 footer_col">
+                        <div class="footer_links">
+                            <ul>
+                                <li><a href="#">Sobre Nós</a></li>
+                                <li><a href="#">Palestrantes</a></li>
+                                <li><a href="#">Minicursos</a></li>
+                                <li><a href="#">Calendário</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer_extra">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_extra_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-start justify-content-center">
+                            <div class="footer_social">
+                                <div class="footer_social_title">Siga-nos nas redes sociais</div>
+                                <ul class="footer_social_list">
+                                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="footer_extra_right ml-lg-auto text-lg-right">
+                                <div class="footer_extra_links">
+                                    <ul>
+                                        <li><a href="/contact/">Fale Conosco</a></li>
+                                        <li><a href="#">Termos de Privacidade</a></li>
+                                    </ul>
+                                </div>
+                                <div class="copyright">
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                                    All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                                                                        aria-hidden="true"></i> by <a
+                                        href="https://colorlib.com" target="_blank">Colorlib</a>
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>
